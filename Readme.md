@@ -170,13 +170,6 @@ El proyecto se basa en el artículo científico incluido que documenta:
 3. **Dependencia de Hardware**: Requiere recursos computacionales significativos para modelos completos
 4. **Detección Visual**: Dependiente de la calidad y consistencia de la interfaz de póker
 
-## Trabajo Futuro
-
-- Integración de redes neuronales profundas para infosets más ricos
-- Implementación de modelado dinámico de oponentes
-- Optimización para hardware de menor capacidad
-- Extensión a variantes adicionales de póker
-
 ## Contribuciones Académicas
 
 Este proyecto contribuye al campo de la inteligencia artificial en juegos mediante:
