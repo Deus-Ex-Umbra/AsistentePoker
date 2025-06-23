@@ -1,195 +1,283 @@
-# Asistente Inteligente de Póker Texas No-Limit Hold'em en Tiempo Real basado en MCCFR con Muestreo de Resultados
+# 🎰 Asistente Inteligente de Póker MCCFR
 
-## Autor
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![YOLO](https://img.shields.io/badge/YOLO-v12-orange.svg)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)
+
+**Sistema de asistencia en tiempo real para Texas Hold'em basado en teoría de juegos**
+
+[📖 Artículo Científico](./Documentos/Artículo%20Científico%20-%20SIS330) | [🎥 Video Demo](https://drive.google.com/drive/folders/16HYjuCk00rNIjWUdkB-jD88990FDGacn) | [📦 Recursos](https://drive.google.com/drive/folders/1VIMWPVC0bHLpkHRsCgQa2_uiCjrhgV2v?usp=drive_link)
+
+</div>
+
+---
+
+## 👨‍💻 Autor
+
 **Gabriel Aparicio Llanquipacha**  
-Carrera: Ingeniería en Ciencias de la Computación  
-Universidad San Francisco Xavier de Chuquisaca (USFX)  
-Sucre, Bolivia
+🎓 Ingeniería en Ciencias de la Computación  
+🏛️ Universidad San Francisco Xavier de Chuquisaca (USFX)  
+📍 Sucre, Bolivia
 
-## Descripción del Proyecto
+---
 
-Este proyecto implementa un asistente inteligente de póker en tiempo real que utiliza el algoritmo **Monte Carlo Counterfactual Regret Minimization (MCCFR)** con Muestreo de Resultados para proporcionar recomendaciones estratégicas óptimas durante partidas de Texas No-Limit Hold'em. El sistema emplea técnicas avanzadas de visión por computadora y procesamiento de texto óptico (OCR) para detectar automáticamente el estado del juego y consultar estrategias preentrenadas basadas en teoría de juegos.
+## 🚀 Descripción
 
-### ¿Qué es MCCFR?
+Sistema inteligente que utiliza **Monte Carlo Counterfactual Regret Minimization (MCCFR)** para proporcionar recomendaciones estratégicas óptimas en Texas No-Limit Hold'em. Combina visión por computadora, OCR y teoría de juegos para análisis en tiempo real.
 
-**Monte Carlo Counterfactual Regret Minimization (MCCFR)** es una variante optimizada del algoritmo Counterfactual Regret Minimization (CFR) diseñada específicamente para juegos de información imperfecta como el póker. A diferencia del CFR canónico que debe explorar exhaustivamente todo el árbol de decisiones, MCCFR utiliza técnicas de muestreo Monte Carlo para reducir drásticamente la carga computacional.
+### 🧠 ¿Qué es MCCFR?
 
-El algoritmo funciona mediante los siguientes principios fundamentales:
+MCCFR es una variante optimizada del algoritmo CFR que utiliza muestreo Monte Carlo para reducir la carga computacional. Converge hacia estrategias de equilibrio de Nash a través de millones de iteraciones de autojuego.
 
-1. **Muestreo de Resultados**: En lugar de calcular valores esperados exactos para cada acción, MCCFR muestrea una única trayectoria del juego hasta un estado terminal.
-
-2. **Corrección de Sesgo**: Para compensar el sesgo introducido por el muestreo, las actualizaciones de arrepentimiento se ponderan por el inverso de la probabilidad de muestreo.
-
-3. **Convergencia a Equilibrio de Nash**: A través de millones de iteraciones de autojuego, la estrategia promedio converge hacia un equilibrio de Nash aproximado, que representa una estrategia inexploitable en el contexto de teoría de juegos.
-
-4. **Regret Matching**: El algoritmo utiliza la técnica de "regret matching" para actualizar las estrategias, minimizando el arrepentimiento contrafactual acumulado.
-
-La fórmula clave del MCCFR con Muestreo de Resultados es:
-
+**Ecuación clave:**
 ```
 R_t(I, a) ← R_{t-1}(I, a) + [π_{-i}^σ(h_z) / q(z)] · u_i(z, a)
 ```
 
-Donde:
-- `R_t(I, a)` es el arrepentimiento acumulado para la acción `a` en el infoset `I`
-- `π_{-i}^σ(h_z)` representa la probabilidad de contribución de los oponentes
-- `q(z)` es la probabilidad de muestreo del resultado `z`
-- `u_i(z, a)` es la utilidad obtenida al tomar la acción `a`
+---
 
-## Características Principales
+## ✨ Características
 
-- **Detección Automática del Estado de Juego**: Utiliza YOLO v12 para detectar elementos visuales de la interfaz de póker
-- **Procesamiento OCR Avanzado**: Extrae información textual de cartas, apuestas y nombres de jugadores
-- **Consulta MCCFR en Tiempo Real**: Accede a modelos preentrenados con más de 2.4 millones de infosets únicos
-- **Interfaz de Usuario Intuitiva**: Proporciona recomendaciones claras y traducidas al español
-- **Soporte Multi-jugador**: Compatible con partidas de 2 a 10 jugadores
-- **Estrategia GTO**: Implementa estrategia Game Theory Optimal basada en equilibrio de Nash
+| Característica | Descripción |
+|---|---|
+| 🎯 **Detección Automática** | YOLO v12 para reconocimiento visual |
+| 📝 **OCR Avanzado** | Extracción de texto de cartas y apuestas |
+| 🎲 **Estrategia GTO** | 2.4M+ infosets preentrenados |
+| 👥 **Multi-jugador** | Soporte para 2-10 jugadores |
+| ⚡ **Tiempo Real** | Recomendaciones instantáneas |
+| 🎨 **Interfaz Intuitiva** | GUI con recomendaciones en español |
 
-## Requisitos del Sistema
+---
 
-### Hardware Mínimo
-- RAM: 8 GB (16 GB recomendado)
-- GPU: Compatible con CUDA (opcional, mejora el rendimiento)
-- CPU: Procesador multi-núcleo moderno
-- Almacenamiento: 5 GB de espacio libre
+## 📁 Estructura del Proyecto
 
-### Software
-- Python 3.8 o superior
-- Sistema operativo: Windows 10/11, Linux Ubuntu 18.04+, macOS 10.15+
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="500" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+  
+  <!-- Title -->
+  <text x="300" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#212529">Estructura del Directorio</text>
+  
+  <!-- Root folder -->
+  <g transform="translate(50, 50)">
+    <rect x="0" y="0" width="20" height="16" fill="#ffc107" stroke="#e0a800"/>
+    <text x="25" y="12" font-family="monospace" font-size="12" font-weight="bold" fill="#212529">poker-mccfr-assistant/</text>
+  </g>
+  
+  <!-- Main files -->
+  <g transform="translate(70, 80)">
+    <rect x="0" y="0" width="16" height="16" fill="#6c757d" stroke="#495057"/>
+    <text x="20" y="12" font-family="monospace" font-size="11" fill="#495057">main.py</text>
+    <text x="120" y="12" font-family="Arial" font-size="10" fill="#6c757d">← Punto de entrada principal</text>
+  </g>
+  
+  <g transform="translate(70, 100)">
+    <rect x="0" y="0" width="16" height="16" fill="#6c757d" stroke="#495057"/>
+    <text x="20" y="12" font-family="monospace" font-size="11" fill="#495057">Config.py</text>
+    <text x="120" y="12" font-family="Arial" font-size="10" fill="#6c757d">← Configuración del sistema</text>
+  </g>
+  
+  <!-- Core modules -->
+  <g transform="translate(70, 130)">
+    <text x="0" y="12" font-family="Arial" font-size="12" font-weight="bold" fill="#0d6efd">Módulos Principales:</text>
+  </g>
+  
+  <g transform="translate(70, 150)">
+    <rect x="0" y="0" width="16" height="16" fill="#198754" stroke="#146c43"/>
+    <text x="20" y="12" font-family="monospace" font-size="11" fill="#495057">EstadoJuego.py</text>
+    <text x="150" y="12" font-family="Arial" font-size="10" fill="#6c757d">Estado del juego</text>
+  </g>
+  
+  <g transform="translate(70, 170)">
+    <rect x="0" y="0" width="16" height="16" fill="#198754" stroke="#146c43"/>
+    <text x="20" y="12" font-family="monospace" font-size="11" fill="#495057">TomadorDeDecisiones.py</text>
+    <text x="180" y="12" font-family="Arial" font-size="10" fill="#6c757d">Lógica MCCFR</text>
+  </g>
+  
+  <g transform="translate(70, 190)">
+    <rect x="0" y="0" width="16" height="16" fill="#198754" stroke="#146c43"/>
+    <text x="20" y="12" font-family="monospace" font-size="11" fill="#495057">MCCFRLoader.py</text>
+    <text x="150" y="12" font-family="Arial" font-size="10" fill="#6c757d">Carga modelos</text>
+  </g>
+  
+  <!-- Detection modules -->
+  <g transform="translate(70, 220)">
+    <text x="0" y="12" font-family="Arial" font-size="12" font-weight="bold" fill="#dc3545">Módulos de Detección:</text>
+  </g>
+  
+  <g transform="translate(70, 240)">
+    <rect x="0" y="0" width="16" height="16" fill="#dc3545" stroke="#b02a37"/>
+    <text x="20" y="12" font-family="monospace" font-size="11" fill="#495057">DetectorObjetos.py</text>
+    <text x="160" y="12" font-family="Arial" font-size="10" fill="#6c757d">YOLO v12</text>
+  </g>
+  
+  <g transform="translate(70, 260)">
+    <rect x="0" y="0" width="16" height="16" fill="#dc3545" stroke="#b02a37"/>
+    <text x="20" y="12" font-family="monospace" font-size="11" fill="#495057">ProcesadorOCR.py</text>
+    <text x="160" y="12" font-family="Arial" font-size="10" fill="#6c757d">EasyOCR</text>
+  </g>
+  
+  <g transform="translate(70, 280)">
+    <rect x="0" y="0" width="16" height="16" fill="#dc3545" stroke="#b02a37"/>
+    <text x="20" y="12" font-family="monospace" font-size="11" fill="#495057">CapturadorPantalla.py</text>
+    <text x="180" y="12" font-family="Arial" font-size="10" fill="#6c757d">Captura pantalla</text>
+  </g>
+  
+  <!-- Interface modules -->
+  <g transform="translate(70, 310)">
+    <text x="0" y="12" font-family="Arial" font-size="12" font-weight="bold" fill="#6f42c1">Interfaz:</text>
+  </g>
+  
+  <g transform="translate(70, 330)">
+    <rect x="0" y="0" width="16" height="16" fill="#6f42c1" stroke="#59359a"/>
+    <text x="20" y="12" font-family="monospace" font-size="11" fill="#495057">InterfazUsuario.py</text>
+    <text x="160" y="12" font-family="Arial" font-size="10" fill="#6c757d">GUI Tkinter</text>
+  </g>
+  
+  <g transform="translate(70, 350)">
+    <rect x="0" y="0" width="16" height="16" fill="#6f42c1" stroke="#59359a"/>
+    <text x="20" y="12" font-family="monospace" font-size="11" fill="#495057">ListenerTeclado.py</text>
+    <text x="160" y="12" font-family="Arial" font-size="10" fill="#6c757d">Controles</text>
+  </g>
+  
+  <!-- Utility modules -->
+  <g transform="translate(70, 380)">
+    <text x="0" y="12" font-family="Arial" font-size="12" font-weight="bold" fill="#fd7e14">Utilidades:</text>
+  </g>
+  
+  <g transform="translate(70, 400)">
+    <rect x="0" y="0" width="16" height="16" fill="#fd7e14" stroke="#e8690b"/>
+    <text x="20" y="12" font-family="monospace" font-size="11" fill="#495057">UtilidadesGeometria.py</text>
+  </g>
+  
+  <g transform="translate(70, 420)">
+    <rect x="0" y="0" width="16" height="16" fill="#fd7e14" stroke="#e8690b"/>
+    <text x="20" y="12" font-family="monospace" font-size="11" fill="#495057">UtilidadesTexto.py</text>
+  </g>
+  
+  <!-- Folders -->
+  <g transform="translate(70, 450)">
+    <rect x="0" y="0" width="20" height="16" fill="#20c997" stroke="#199473"/>
+    <text x="25" y="12" font-family="monospace" font-size="11" fill="#495057">Documentos/</text>
+    <text x="120" y="12" font-family="Arial" font-size="10" fill="#6c757d">← Artículo científico</text>
+  </g>
+  
+  <g transform="translate(70, 470)">
+    <rect x="0" y="0" width="20" height="16" fill="#20c997" stroke="#199473"/>
+    <text x="25" y="12" font-family="monospace" font-size="11" fill="#495057">Yolo12n/</text>
+    <text x="120" y="12" font-family="Arial" font-size="10" fill="#6c757d">← Pesos del modelo</text>
+  </g>
+</svg>
 
-## Instalación
+---
 
-### 1. Clonar el Repositorio
+## 🛠️ Instalación Rápida
+
+### 1️⃣ Clonar y configurar
 ```bash
-git clone [URL_DEL_REPOSITORIO]
+git clone [URL_REPOSITORIO]
 cd poker-mccfr-assistant
-```
-
-### 2. Crear Entorno Virtual
-```bash
 python -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
-```
-
-### 3. Instalar Dependencias
-```bash
+source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 4. Descargar Recursos Adicionales
+### 2️⃣ Descargar recursos
 
-#### Modelos MCCFR Preentrenados
-Descargar desde: [Repositorios Completos](https://drive.google.com/drive/folders/1VIMWPVC0bHLpkHRsCgQa2_uiCjrhgV2v?usp=drive_link)
+| Recurso | Enlace | Destino |
+|---------|--------|---------|
+| 🧠 **Modelos MCCFR** | [Repositorios](https://drive.google.com/drive/folders/1VIMWPVC0bHLpkHRsCgQa2_uiCjrhgV2v?usp=drive_link) | `../PokerNGPlusPlus/` |
+| 👁️ **Pesos YOLO** | [Pesos](https://drive.google.com/drive/folders/1h1FXNBSRxMy_KMFNT4moZungN9h7ynzd) | `./Yolo12n/best.pt` |
 
-Extraer en el directorio `../PokerNGPlusPlus/`
-
-#### Pesos del Modelo YOLO
-Descargar desde: [Pesos YOLO](https://drive.google.com/drive/folders/1h1FXNBSRxMy_KMFNT4moZungN9h7ynzd)
-
-Colocar el archivo `best.pt` en `./Yolo12n/`
-
-#### Video Explicativo
-Disponible en: [Video Demostrativo](https://drive.google.com/drive/folders/16HYjuCk00rNIjWUdkB-jD88990FDGacn)
-
-### 5. Configuración
-Verificar las rutas en `Config.py`:
-```python
-YOLO_MODEL_PATH = './Yolo12n/best.pt'
-MCCFR_MODELS_DIR = '../PokerNGPlusPlus/'
-```
-
-## Uso del Sistema
-
-### Ejecución
+### 3️⃣ Ejecutar
 ```bash
 python main.py
 ```
 
-### Controles de Teclado
-- **Q**: Salir del programa
-- **P**: Pausar/Reanudar detección
-- **F**: Forzar nueva recomendación
+---
 
-### Interfaz de Usuario
-El sistema despliega una ventana flotante que muestra:
-- Fase actual del juego
-- Infoset consultado
-- Acción recomendada por MCCFR
-- Monto exacto de apuesta
-- Estado del sistema
+## 🎮 Uso
 
-## Arquitectura del Sistema
+### Controles
+| Tecla | Acción |
+|-------|--------|
+| `Q` | Salir |
+| `P` | Pausar/Reanudar |
+| `F` | Forzar recomendación |
 
-### Descripción de Archivos
-
-#### Módulos Principales
-- **`main.py`**: Punto de entrada principal, coordina todos los módulos y ejecuta el bucle principal del sistema
-- **`EstadoJuego.py`**: Gestiona el estado completo de la partida, incluyendo jugadores, fases, apuestas y acciones
-- **`TomadorDeDecisiones.py`**: Implementa la lógica de consulta MCCFR y cálculo de recomendaciones
-- **`MCCFRLoader.py`**: Carga y parsea los modelos MCCFR preentrenados desde archivos binarios
-
-#### Módulos de Detección
-- **`CapturadorPantalla.py`**: Captura frames de la pantalla en tiempo real usando MSS
-- **`DetectorObjetos.py`**: Implementa la detección de objetos usando YOLO v12
-- **`ProcesadorOCR.py`**: Extrae texto de imágenes usando EasyOCR con preprocesamiento avanzado
-
-#### Módulos de Interfaz
-- **`InterfazUsuario.py`**: Interfaz gráfica Tkinter para mostrar recomendaciones
-- **`ListenerTeclado.py`**: Maneja los controles de teclado del sistema
-
-#### Módulos Utilitarios
-- **`UtilidadesGeometria.py`**: Funciones para cálculos geométricos y ordenamiento de jugadores
-- **`UtilidadesTexto.py`**: Procesamiento y limpieza de texto extraído por OCR
-- **`UtilidadesDebug.py`**: Herramientas de depuración y logging
-- **`Config.py`**: Configuración central del sistema y constantes
-
-#### Documentación
-- **`paste.txt`**: Artículo científico completo en formato LaTeX con metodología y resultados
-
-## Metodología Científica
-
-El proyecto se basa en el artículo científico incluido que documenta:
-
-1. **Entrenamiento Masivo**: 1 billón de manos autojugadas
-2. **Exploración de Infosets**: 2,403,013 infosets únicos explorados
-3. **Validación Estadística**: 100 millones de manos aleatorias para validar el evaluador
-4. **Pruebas de Rendimiento**: Evaluación contra Slumbot en 1,000 manos
-5. **Abstracción Optimizada**: Sistema de infosets diseñado para eficiencia computacional
-
-## Resultados Obtenidos
-
-- **Tasa de Ganancia Positiva**: Demostrada contra bot de referencia Slumbot
-- **Estrategia Emergente**: Desarrollo de estilo agresivo como comportamiento óptimo
-- **Rendimiento en Tiempo Real**: Procesamiento a 27+ millones de manos por segundo
-- **Modelos Compactos**: 95,990 nodos para modalidad Heads-Up (2 jugadores)
-
-## Limitaciones Conocidas
-
-1. **Abstracción con Pérdida**: El sistema de infosets ignora algunos detalles del historial de apuestas
-2. **Estrategia Estática**: No se adapta dinámicamente a patrones específicos de oponentes
-3. **Dependencia de Hardware**: Requiere recursos computacionales significativos para modelos completos
-4. **Detección Visual**: Dependiente de la calidad y consistencia de la interfaz de póker
-
-## Contribuciones Académicas
-
-Este proyecto contribuye al campo de la inteligencia artificial en juegos mediante:
-
-1. **Implementación Práctica**: Demostración de MCCFR en software de tiempo real
-2. **Metodología de Entrenamiento**: Sistema de guardado por lotes para superar limitaciones de hardware
-3. **Validación Empírica**: Pruebas contra bots de referencia establecidos
-4. **Documentación Científica**: Artículo completo con metodología reproducible
-
-## Licencia y Uso Académico
-
-Este proyecto fue desarrollado con fines académicos y de investigación en el marco de la carrera de Ingeniería en Ciencias de la Computación de la Universidad San Francisco Xavier de Chuquisaca (USFX).
-
-## Contacto
-
-**Gabriel Aparicio Llanquipacha**  
-Estudiante de Ingeniería en Ciencias de la Computación  
-Universidad San Francisco Xavier de Chuquisaca (USFX)  
-Sucre, Bolivia
+### Interfaz
+- 🎯 **Recomendación**: Acción óptima según MCCFR
+- 💰 **Monto**: Cantidad exacta de apuesta
+- 📊 **Confianza**: Probabilidad de la recomendación
+- 🃏 **Infoset**: Estado actual analizado
 
 ---
 
-*Este README acompaña el artículo científico "Asistente Inteligente de Póker Texas No-Limit Hold'em en Tiempo Real basado en MCCFR con Muestreo de Resultados" presentado como trabajo de investigación en la USFX.*
+## 📊 Resultados
+
+- ✅ **2.4M+ infosets** explorados
+- ✅ **Tasa ganancia positiva** vs Slumbot
+- ✅ **1B manos** de entrenamiento
+- ✅ **Tiempo real** < 1s respuesta
+
+---
+
+## 🤝 Contribuir
+
+Las contribuciones son bienvenidas. Por favor:
+
+1. Fork el proyecto
+2. Crea una rama (`git checkout -b feature/nueva-caracteristica`)
+3. Commit (`git commit -m 'Agregar característica'`)
+4. Push (`git push origin feature/nueva-caracteristica`)
+5. Abre un Pull Request
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
+
+```
+MIT License
+
+Copyright (c) 2024 Gabriel Aparicio Llanquipacha
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
+
+## 📚 Referencias
+
+- [📖 Artículo Científico Completo](./Documentos/Artículo%20Científico%20-%20SIS330)
+- [🎥 Video Demostrativo](https://drive.google.com/drive/folders/16HYjuCk00rNIjWUdkB-jD88990FDGacn)
+- [📦 Recursos Adicionales](https://drive.google.com/drive/folders/1VIMWPVC0bHLpkHRsCgQa2_uiCjrhgV2v?usp=drive_link)
+
+---
+
+<div align="center">
+
+**Desarrollado con ❤️ por Gabriel Aparicio Llanquipacha**  
+🏛️ Universidad San Francisco Xavier de Chuquisaca (USFX)
+
+</div>
