@@ -1,0 +1,210 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2" rx="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#212529">Estructura del Proyecto MCCFR Poker Assistant</text>
+  
+  <!-- Root folder -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="24" height="20" fill="#ffc107" stroke="#e0a800" stroke-width="2" rx="3"/>
+    <text x="30" y="15" font-family="JetBrains Mono, monospace" font-size="14" font-weight="bold" fill="#212529">poker-mccfr-assistant/</text>
+  </g>
+  
+  <!-- Main files -->
+  <g transform="translate(80, 100)">
+    <rect x="0" y="0" width="20" height="20" fill="#6c757d" stroke="#495057" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">main.py</text>
+    <text x="150" y="15" font-family="Arial" font-size="11" fill="#6c757d">← Punto de entrada principal</text>
+  </g>
+  
+  <g transform="translate(80, 125)">
+    <rect x="0" y="0" width="20" height="20" fill="#6c757d" stroke="#495057" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">Config.py</text>
+    <text x="150" y="15" font-family="Arial" font-size="11" fill="#6c757d">← Configuración del sistema</text>
+  </g>
+  
+  <g transform="translate(80, 150)">
+    <rect x="0" y="0" width="20" height="20" fill="#6c757d" stroke="#495057" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">requirements.txt</text>
+    <text x="150" y="15" font-family="Arial" font-size="11" fill="#6c757d">← Dependencias</text>
+  </g>
+  
+  <!-- Core modules section -->
+  <g transform="translate(80, 185)">
+    <rect x="0" y="0" width="300" height="2" fill="#0d6efd"/>
+    <text x="0" y="20" font-family="Arial" font-size="14" font-weight="bold" fill="#0d6efd">📦 Módulos Principales</text>
+  </g>
+  
+  <g transform="translate(100, 215)">
+    <rect x="0" y="0" width="20" height="20" fill="#198754" stroke="#146c43" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">EstadoJuego.py</text>
+    <text x="180" y="15" font-family="Arial" font-size="11" fill="#6c757d">Gestión del estado del juego</text>
+  </g>
+  
+  <g transform="translate(100, 240)">
+    <rect x="0" y="0" width="20" height="20" fill="#198754" stroke="#146c43" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">TomadorDeDecisiones.py</text>
+    <text x="200" y="15" font-family="Arial" font-size="11" fill="#6c757d">Lógica MCCFR y recomendaciones</text>
+  </g>
+  
+  <g transform="translate(100, 265)">
+    <rect x="0" y="0" width="20" height="20" fill="#198754" stroke="#146c43" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">MCCFRLoader.py</text>
+    <text x="180" y="15" font-family="Arial" font-size="11" fill="#6c757d">Carga de modelos preentrenados</text>
+  </g>
+  
+  <!-- Detection modules section -->
+  <g transform="translate(80, 300)">
+    <rect x="0" y="0" width="300" height="2" fill="#dc3545"/>
+    <text x="0" y="20" font-family="Arial" font-size="14" font-weight="bold" fill="#dc3545">🔍 Módulos de Detección</text>
+  </g>
+  
+  <g transform="translate(100, 330)">
+    <rect x="0" y="0" width="20" height="20" fill="#dc3545" stroke="#b02a37" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">DetectorObjetos.py</text>
+    <text x="180" y="15" font-family="Arial" font-size="11" fill="#6c757d">Detección con YOLO v12</text>
+  </g>
+  
+  <g transform="translate(100, 355)">
+    <rect x="0" y="0" width="20" height="20" fill="#dc3545" stroke="#b02a37" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">ProcesadorOCR.py</text>
+    <text x="180" y="15" font-family="Arial" font-size="11" fill="#6c757d">Procesamiento de texto con EasyOCR</text>
+  </g>
+  
+  <g transform="translate(100, 380)">
+    <rect x="0" y="0" width="20" height="20" fill="#dc3545" stroke="#b02a37" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">CapturadorPantalla.py</text>
+    <text x="200" y="15" font-family="Arial" font-size="11" fill="#6c757d">Captura de pantalla en tiempo real</text>
+  </g>
+  
+  <!-- Interface modules section -->
+  <g transform="translate(80, 415)">
+    <rect x="0" y="0" width="300" height="2" fill="#6f42c1"/>
+    <text x="0" y="20" font-family="Arial" font-size="14" font-weight="bold" fill="#6f42c1">💻 Interfaz de Usuario</text>
+  </g>
+  
+  <g transform="translate(100, 445)">
+    <rect x="0" y="0" width="20" height="20" fill="#6f42c1" stroke="#59359a" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">InterfazUsuario.py</text>
+    <text x="180" y="15" font-family="Arial" font-size="11" fill="#6c757d">GUI con Tkinter</text>
+  </g>
+  
+  <g transform="translate(100, 470)">
+    <rect x="0" y="0" width="20" height="20" fill="#6f42c1" stroke="#59359a" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">ListenerTeclado.py</text>
+    <text x="180" y="15" font-family="Arial" font-size="11" fill="#6c757d">Controles de teclado</text>
+  </g>
+  
+  <!-- Utility modules section -->
+  <g transform="translate(80, 505)">
+    <rect x="0" y="0" width="300" height="2" fill="#fd7e14"/>
+    <text x="0" y="20" font-family="Arial" font-size="14" font-weight="bold" fill="#fd7e14">🛠️ Utilidades</text>
+  </g>
+  
+  <g transform="translate(100, 535)">
+    <rect x="0" y="0" width="20" height="20" fill="#fd7e14" stroke="#e8690b" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">UtilidadesGeometria.py</text>
+    <text x="210" y="15" font-family="Arial" font-size="11" fill="#6c757d">Cálculos geométricos</text>
+  </g>
+  
+  <g transform="translate(100, 560)">
+    <rect x="0" y="0" width="20" height="20" fill="#fd7e14" stroke="#e8690b" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">UtilidadesTexto.py</text>
+    <text x="180" y="15" font-family="Arial" font-size="11" fill="#6c757d">Procesamiento de texto</text>
+  </g>
+  
+  <!-- Right side - Folders and resources -->
+  <g transform="translate(450, 100)">
+    <rect x="0" y="0" width="300" height="2" fill="#20c997"/>
+    <text x="0" y="20" font-family="Arial" font-size="14" font-weight="bold" fill="#20c997">📁 Directorios y Recursos</text>
+  </g>
+  
+  <g transform="translate(470, 130)">
+    <rect x="0" y="0" width="24" height="20" fill="#20c997" stroke="#199473" stroke-width="2" rx="3"/>
+    <text x="30" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">Documentos/</text>
+  </g>
+  
+  <g transform="translate(490, 155)">
+    <rect x="0" y="0" width="20" height="20" fill="#17a2b8" stroke="#138496" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="11" fill="#495057">Artículo Científico - SIS330</text>
+  </g>
+  
+  <g transform="translate(490, 180)">
+    <rect x="0" y="0" width="20" height="20" fill="#17a2b8" stroke="#138496" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="11" fill="#495057">estructura-directorio.svg</text>
+  </g>
+  
+  <g transform="translate(470, 210)">
+    <rect x="0" y="0" width="24" height="20" fill="#20c997" stroke="#199473" stroke-width="2" rx="3"/>
+    <text x="30" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">Yolo12n/</text>
+  </g>
+  
+  <g transform="translate(490, 235)">
+    <rect x="0" y="0" width="20" height="20" fill="#ffc107" stroke="#e0a800" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="11" fill="#495057">best.pt</text>
+    <text x="100" y="15" font-family="Arial" font-size="10" fill="#6c757d">← Pesos YOLO</text>
+  </g>
+  
+  <g transform="translate(470, 265)">
+    <rect x="0" y="0" width="24" height="20" fill="#20c997" stroke="#199473" stroke-width="2" rx="3"/>
+    <text x="30" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">logs/</text>
+    <text x="80" y="15" font-family="Arial" font-size="11" fill="#6c757d">← Generado automáticamente</text>
+  </g>
+  
+  <!-- External resources -->
+  <g transform="translate(450, 305)">
+    <rect x="0" y="0" width="300" height="2" fill="#e83e8c"/>
+    <text x="0" y="20" font-family="Arial" font-size="14" font-weight="bold" fill="#e83e8c">☁️ Recursos Externos</text>
+  </g>
+  
+  <g transform="translate(470, 335)">
+    <rect x="0" y="0" width="24" height="20" fill="#e83e8c" stroke="#d91a72" stroke-width="2" rx="3"/>
+    <text x="30" y="15" font-family="JetBrains Mono, monospace" font-size="12" fill="#495057">../PokerNGPlusPlus/</text>
+  </g>
+  
+  <g transform="translate(490, 360)">
+    <rect x="0" y="0" width="20" height="20" fill="#6610f2" stroke="#520dc2" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="11" fill="#495057">mccfr_2_poker.bin</text>
+  </g>
+  
+  <g transform="translate(490, 385)">
+    <rect x="0" y="0" width="20" height="20" fill="#6610f2" stroke="#520dc2" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="11" fill="#495057">mccfr_3_poker.bin</text>
+  </g>
+  
+  <g transform="translate(490, 410)">
+    <rect x="0" y="0" width="20" height="20" fill="#6610f2" stroke="#520dc2" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="11" fill="#495057">...</text>
+  </g>
+  
+  <g transform="translate(490, 435)">
+    <rect x="0" y="0" width="20" height="20" fill="#6610f2" stroke="#520dc2" stroke-width="2" rx="2"/>
+    <text x="25" y="15" font-family="JetBrains Mono, monospace" font-size="11" fill="#495057">mccfr_10_poker.bin</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(450, 480)">
+    <rect x="0" y="0" width="300" height="2" fill="#6c757d"/>
+    <text x="0" y="20" font-family="Arial" font-size="12" font-weight="bold" fill="#6c757d">🎨 Leyenda</text>
+  </g>
+  
+  <g transform="translate(470, 510)">
+    <rect x="0" y="0" width="12" height="12" fill="#6c757d" rx="1"/>
+    <text x="18" y="10" font-family="Arial" font-size="10" fill="#495057">Archivos Python</text>
+    
+    <rect x="120" y="0" width="12" height="12" fill="#20c997" rx="1"/>
+    <text x="138" y="10" font-family="Arial" font-size="10" fill="#495057">Directorios</text>
+    
+    <rect x="210" y="0" width="12" height="12" fill="#6610f2" rx="1"/>
+    <text x="228" y="10" font-family="Arial" font-size="10" fill="#495057">Modelos MCCFR</text>
+  </g>
+  
+  <g transform="translate(470, 530)">
+    <rect x="0" y="0" width="12" height="12" fill="#ffc107" rx="1"/>
+    <text x="18" y="10" font-family="Arial" font-size="10" fill="#495057">Pesos YOLO</text>
+    
+    <rect x="120" y="0" width="12" height="12" fill="#17a2b8" rx="1"/>
+    <text x="138" y="10" font-family="Arial" font-size="10" fill="#495057">Documentación</text>
+  </g>
+</svg>
